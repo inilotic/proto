@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "github.com/spk/shrine/proto";
+
+package proto;
+
+
+service Shrine {
+  rpc GetHostForEvent(RequestGetHostForEvent) returns (ResponseGetHostForEvent) {}
+}
+
+message RequestGetHostForEvent {
+  string eventId = 1;
+}
+
+message ResponseGetHostForEvent {
+  string mothershipId = 1;
+  string apiHost = 2;
+  string wsHost = 3;
+}
